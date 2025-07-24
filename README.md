@@ -88,7 +88,7 @@ This is mine and its super incomplete. I only have 3 color rooms generated and 3
 
 The color selector buttons are just button cards and are not connected to this. They control the lights (triggering a script that sets light colors), and because of the light changing, the sensor is triggered and the picture listens to that.
 
-If you want, here's the code I use for the button rows. Requires custom button card from HACS.111
+If you want, here's the code I use for the button rows. Requires custom button card from HACS.
 ````type: custom:button-card
 entity: light.bcl_local
 entity_picture: /local/blue_lights.png

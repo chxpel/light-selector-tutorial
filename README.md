@@ -14,6 +14,9 @@ In Home Assistant, go to Helpers, then create a new one > Template > Template a 
 
 In the code part in State Template, put this. It uses Euclidean distance and predefined CSS RGB codes to classify colors. 
 
+* Rename ```tv_light_1``` to whichever light entity you want to use. Although I set my lights to different colors, for now, I only need to read 1 to know the color of the room.
+* This will only break if I have a light setting with many very different colors. Right now, all of my presets are all similar (e.g blues, reds, etc). In that case, Ill likely make more images, custom labels, and figure out how to incorporate multiple lights into this function
+
 ```
 {% set color = state_attr('light.tv_light_1', 'rgb_color') %}
 {% if color is none %}

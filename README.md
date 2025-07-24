@@ -1,10 +1,19 @@
-First time sharing code, sorry if I do it wrong. I see a lot of people posting single YAML blocks and I can never tell how it fits in. I'm not sure if I am doing this optimally, as its hard to know when to use YAML vs visual aids. Anyway here's how I did it.
+First time sharing code, sorry if I do it wrong. I see a lot of people posting single YAML blocks and I can never tell how it fits in. 
+
+I'm not sure if I am doing this optimally, as its hard to know when to use YAML vs visual aids. Anyway here's how I did it.
+
 First generate a room in chatGPT 4o. Give it a clean photo of your room and say "Generate an isometric 3-D model of this room and keep the composition as accurate as possible"
+
 When you get one you like, feed it back in (must re-upload), and say "Take this exact image. Change nothing, except make the lighting blue"
+
 For the color selectors, say "Generate me an icon (photo, with color selector at the bottom. circles in a row) for a blue and purple theme"
+
 Do this for all colors, and a lights off option if you want.
+
 In Home Assistant, go to Helpers, then create a new one > Template > Template a sensor
+
 In the code part in State Template, put this. It uses Euclidean distance and predefined CSS RGB codes to classify colors. 
+
 ```
 {% set color = state_attr('light.tv_light_1', 'rgb_color') %}
 {% if color is none %}
